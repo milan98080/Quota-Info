@@ -49,6 +49,7 @@ for cat in categories:
         cate = 'BIKE'
     if cat == 3:
         cate = 'CAR'
+    print(cat)
     response = requests.post('https://applydl.dotm.gov.np/license/quota', cookies=cookies, headers=headers,
                              json=json_data)
     data = json.loads(response.text)
@@ -56,4 +57,5 @@ for cat in categories:
     for every in data['quotas']:
         parsed = new[every]
         if parsed['available'] > 0:
+            print(parsed['ad'])
             push = pb.push_note(cate, parsed['ad'] + '    ' + str(parsed['available']))
