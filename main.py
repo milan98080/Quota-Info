@@ -4,13 +4,11 @@ from pushbullet import Pushbullet
 from threading import Timer
 
 API_KEY = "o.HsKFaNxD4pvOo3cZUu2fyALu4Fq3pUEM"
-NAPI_KEY = "o.dCjW2icZAW53ozyC4ytaeF45d1FxEx2U"
 pb = Pushbullet(API_KEY)
-npb = Pushbullet(NAPI_KEY)
 cookies = {
-    'remember_applicants_59ba36addc2b2f9401580f014c7f58ea4e30989d': '694691%7CMXrNqUx2OKmIcJCWaoCUxO1ajJAhKslAQ6jt0iVP0pONhPrYNha2z2TEzyy0%7C%24argon2id%24v%3D19%24m%3D65536%2Ct%3D4%2Cp%3D1%24T1laYXEyNVphZUszaDJBWg%241e%2FFwRiaaYOGIxxNvJfYrWlO0rVRfvocmN3vKrIhQNs',
-    'XSRF-TOKEN': 'eyJpdiI6IlpkS1RCYVZ6ZGFpczhQdmUvK3I4Ync9PSIsInZhbHVlIjoiMUI5VU5vemE1aDFjVVJnNzRFQ0hWQU1FQklXMndFd045UmxtdVdnTjVEMlVBbmhhalUwZGYzMGY1c0c4dmhqd3c4QTBtM21GK1lGNjROVXNOVTRGdW01OWhmOXBtbUlNVURhbEpMZGNwYWErSFIrSjZrY3U1NkVSZ0VHS0M3UWYiLCJtYWMiOiJkMzc4NzQzMjFiNzM2YWI0MmRlNGU4MDM1OWNjNGIwY2U3MzAxMTM5M2VkMDJkNzZmMWY2OWQ1MmYxZDUyOTZmIiwidGFnIjoiIn0%3D',
-    'odl_session': 'l1qxH4kS93Fg3qGnPe4YgTE2AdbxjHYNleVLqbfy',
+    'remember_applicants_59ba36addc2b2f9401580f014c7f58ea4e30989d': '694691%7CSFooPAzLOCxbX0aXaDFbtENONBllgMJlMraTxeAYNqK2WqrGPoHRkk0t4IC2%7C%24argon2id%24v%3D19%24m%3D65536%2Ct%3D4%2Cp%3D1%24T1laYXEyNVphZUszaDJBWg%241e%2FFwRiaaYOGIxxNvJfYrWlO0rVRfvocmN3vKrIhQNs',
+    'XSRF-TOKEN': 'eyJpdiI6Im5MOFFCSVI1V0xBZVRwRUVOUG1qRUE9PSIsInZhbHVlIjoiVktwUU5CTFNSOG1oM1ZtMllhakpsWDJpTm5mQmVZdVNpQWRZai83Z3l3NzhrOW04bWxVTDYvOHhqOWVZVXhIaHAvWDRFMUJLdzRMaStCTTlabXBBdEM0WjVzQWk1czlwWEw1dEgrUlRxNmxjMVhSWUtLcUsyVlRwZGRqRzNBUHAiLCJtYWMiOiIyODUzNDNhMWVlNmJmOTczMzJlNzY5ODhkNDg3NTY1YjEzZmI0Y2UxNjA5Nzk2Mzg2NmFjNDBhY2NhOGQ1NjBjIiwidGFnIjoiIn0%3D',
+    'odl_session': '3zkFWPCxNpemkQeSJRPlOPYgVoW9Gm4K8quzKd1v',
 }
 
 headers = {
@@ -19,17 +17,17 @@ headers = {
     'Accept-Language': 'en-GB,en;q=0.5',
     # 'Accept-Encoding': 'gzip, deflate, br',
     'X-NewRelic-ID': 'VwMAWVNbCBAFVFVTDgEDX1U=',
-    'newrelic': 'eyJ2IjpbMCwxXSwiZCI6eyJ0eSI6IkJyb3dzZXIiLCJhYyI6IjM1Nzg1ODAiLCJhcCI6IjUwNDE5MDUwOCIsImlkIjoiNDk2NGE3YmYwNmEwMTUzNyIsInRyIjoiNzlkMjcyOTc5NjI5NjdmYWM5Yzk3ZjhiOTUwZGFhMWQiLCJ0aSI6MTY2MDE4NDczNjg0NX19',
-    'traceparent': '00-79d27297962967fac9c97f8b950daa1d-4964a7bf06a01537-01',
-    'tracestate': '3578580@nr=0-1-3578580-504190508-4964a7bf06a01537----1660184736845',
+    'newrelic': 'eyJ2IjpbMCwxXSwiZCI6eyJ0eSI6IkJyb3dzZXIiLCJhYyI6IjM1Nzg1ODAiLCJhcCI6IjUwNDE5MDUwOCIsImlkIjoiM2UwMWZkNGY2OWNkN2IxMSIsInRyIjoiZDRkODYyMzllNDc3MzA0Y2U3N2Q1YzliMWUzYzExMDkiLCJ0aSI6MTY2MDIwNTQyODAwMH19',
+    'traceparent': '00-d4d86239e477304ce77d5c9b1e3c1109-3e01fd4f69cd7b11-01',
+    'tracestate': '3578580@nr=0-1-3578580-504190508-3e01fd4f69cd7b11----1660205428000',
     # Already added when you pass json=
     # 'Content-Type': 'application/json',
-    'X-XSRF-TOKEN': 'eyJpdiI6IlpkS1RCYVZ6ZGFpczhQdmUvK3I4Ync9PSIsInZhbHVlIjoiMUI5VU5vemE1aDFjVVJnNzRFQ0hWQU1FQklXMndFd045UmxtdVdnTjVEMlVBbmhhalUwZGYzMGY1c0c4dmhqd3c4QTBtM21GK1lGNjROVXNOVTRGdW01OWhmOXBtbUlNVURhbEpMZGNwYWErSFIrSjZrY3U1NkVSZ0VHS0M3UWYiLCJtYWMiOiJkMzc4NzQzMjFiNzM2YWI0MmRlNGU4MDM1OWNjNGIwY2U3MzAxMTM5M2VkMDJkNzZmMWY2OWQ1MmYxZDUyOTZmIiwidGFnIjoiIn0=',
+    'X-XSRF-TOKEN': 'eyJpdiI6Im5MOFFCSVI1V0xBZVRwRUVOUG1qRUE9PSIsInZhbHVlIjoiVktwUU5CTFNSOG1oM1ZtMllhakpsWDJpTm5mQmVZdVNpQWRZai83Z3l3NzhrOW04bWxVTDYvOHhqOWVZVXhIaHAvWDRFMUJLdzRMaStCTTlabXBBdEM0WjVzQWk1czlwWEw1dEgrUlRxNmxjMVhSWUtLcUsyVlRwZGRqRzNBUHAiLCJtYWMiOiIyODUzNDNhMWVlNmJmOTczMzJlNzY5ODhkNDg3NTY1YjEzZmI0Y2UxNjA5Nzk2Mzg2NmFjNDBhY2NhOGQ1NjBjIiwidGFnIjoiIn0=',
     'Origin': 'https://applydl.dotm.gov.np',
     'Connection': 'keep-alive',
     'Referer': 'https://applydl.dotm.gov.np/license/category',
     # Requests sorts cookies= alphabetically
-    # 'Cookie': 'remember_applicants_59ba36addc2b2f9401580f014c7f58ea4e30989d=694691%7CMXrNqUx2OKmIcJCWaoCUxO1ajJAhKslAQ6jt0iVP0pONhPrYNha2z2TEzyy0%7C%24argon2id%24v%3D19%24m%3D65536%2Ct%3D4%2Cp%3D1%24T1laYXEyNVphZUszaDJBWg%241e%2FFwRiaaYOGIxxNvJfYrWlO0rVRfvocmN3vKrIhQNs; XSRF-TOKEN=eyJpdiI6IlpkS1RCYVZ6ZGFpczhQdmUvK3I4Ync9PSIsInZhbHVlIjoiMUI5VU5vemE1aDFjVVJnNzRFQ0hWQU1FQklXMndFd045UmxtdVdnTjVEMlVBbmhhalUwZGYzMGY1c0c4dmhqd3c4QTBtM21GK1lGNjROVXNOVTRGdW01OWhmOXBtbUlNVURhbEpMZGNwYWErSFIrSjZrY3U1NkVSZ0VHS0M3UWYiLCJtYWMiOiJkMzc4NzQzMjFiNzM2YWI0MmRlNGU4MDM1OWNjNGIwY2U3MzAxMTM5M2VkMDJkNzZmMWY2OWQ1MmYxZDUyOTZmIiwidGFnIjoiIn0%3D; odl_session=l1qxH4kS93Fg3qGnPe4YgTE2AdbxjHYNleVLqbfy',
+    # 'Cookie': 'remember_applicants_59ba36addc2b2f9401580f014c7f58ea4e30989d=694691%7CSFooPAzLOCxbX0aXaDFbtENONBllgMJlMraTxeAYNqK2WqrGPoHRkk0t4IC2%7C%24argon2id%24v%3D19%24m%3D65536%2Ct%3D4%2Cp%3D1%24T1laYXEyNVphZUszaDJBWg%241e%2FFwRiaaYOGIxxNvJfYrWlO0rVRfvocmN3vKrIhQNs; XSRF-TOKEN=eyJpdiI6Im5MOFFCSVI1V0xBZVRwRUVOUG1qRUE9PSIsInZhbHVlIjoiVktwUU5CTFNSOG1oM1ZtMllhakpsWDJpTm5mQmVZdVNpQWRZai83Z3l3NzhrOW04bWxVTDYvOHhqOWVZVXhIaHAvWDRFMUJLdzRMaStCTTlabXBBdEM0WjVzQWk1czlwWEw1dEgrUlRxNmxjMVhSWUtLcUsyVlRwZGRqRzNBUHAiLCJtYWMiOiIyODUzNDNhMWVlNmJmOTczMzJlNzY5ODhkNDg3NTY1YjEzZmI0Y2UxNjA5Nzk2Mzg2NmFjNDBhY2NhOGQ1NjBjIiwidGFnIjoiIn0%3D; odl_session=3zkFWPCxNpemkQeSJRPlOPYgVoW9Gm4K8quzKd1v',
     'Sec-Fetch-Dest': 'empty',
     'Sec-Fetch-Mode': 'cors',
     'Sec-Fetch-Site': 'same-origin',
@@ -37,7 +35,6 @@ headers = {
 
 
 def run():
-    npb.push_note('RUNNING', 'THE SCRIPT IS RUNNING')
     categories = [1, 2, 3]
 
     for cat in categories:
@@ -60,7 +57,11 @@ def run():
             parsed = new[every]
             if parsed['available'] > 0:
                 push = pb.push_note(cate, parsed['ad'] + '    ' + str(parsed['available']))
-    Timer(5, run).start()
 
 
-run()
+def startt():
+    Timer(5, startt).start()
+    run()
+
+
+startt()
