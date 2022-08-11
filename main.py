@@ -4,8 +4,9 @@ from pushbullet import Pushbullet
 from threading import Timer
 
 API_KEY = "o.HsKFaNxD4pvOo3cZUu2fyALu4Fq3pUEM"
+NAPI_KEY = "o.dCjW2icZAW53ozyC4ytaeF45d1FxEx2U"
 pb = Pushbullet(API_KEY)
-
+npb = Pushbullet(NAPI_KEY)
 cookies = {
     'remember_applicants_59ba36addc2b2f9401580f014c7f58ea4e30989d': '694691%7CMXrNqUx2OKmIcJCWaoCUxO1ajJAhKslAQ6jt0iVP0pONhPrYNha2z2TEzyy0%7C%24argon2id%24v%3D19%24m%3D65536%2Ct%3D4%2Cp%3D1%24T1laYXEyNVphZUszaDJBWg%241e%2FFwRiaaYOGIxxNvJfYrWlO0rVRfvocmN3vKrIhQNs',
     'XSRF-TOKEN': 'eyJpdiI6IlpkS1RCYVZ6ZGFpczhQdmUvK3I4Ync9PSIsInZhbHVlIjoiMUI5VU5vemE1aDFjVVJnNzRFQ0hWQU1FQklXMndFd045UmxtdVdnTjVEMlVBbmhhalUwZGYzMGY1c0c4dmhqd3c4QTBtM21GK1lGNjROVXNOVTRGdW01OWhmOXBtbUlNVURhbEpMZGNwYWErSFIrSjZrY3U1NkVSZ0VHS0M3UWYiLCJtYWMiOiJkMzc4NzQzMjFiNzM2YWI0MmRlNGU4MDM1OWNjNGIwY2U3MzAxMTM5M2VkMDJkNzZmMWY2OWQ1MmYxZDUyOTZmIiwidGFnIjoiIn0%3D',
@@ -36,7 +37,7 @@ headers = {
 
 
 def run():
-    pb.push_note('________________________________________', '_________________________________________')
+    npb.push_note('RUNNING', 'THE SCRIPT IS RUNNING')
     categories = [1, 2, 3]
 
     for cat in categories:
