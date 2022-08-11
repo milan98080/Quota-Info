@@ -59,7 +59,8 @@ def run():
             parsed = new[every]
             if parsed['available'] > 0:
                 push = pb.push_note(cate, parsed['ad'] + '    ' + str(parsed['available']))
-    Timer(30, run).start()
+    Timer(5, run).start()
+    print('DONE')
 
 
 run()
