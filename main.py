@@ -3,7 +3,7 @@ import json
 from pushbullet import Pushbullet
 from threading import Timer
 
-API_KEY = "o.HsKFaNxD4pvOo3cZUu2fyALu4Fq3pUEM"
+API_KEY = "o.53fergJdWezg7vDwJNVIQOh1oxzEAMp4"
 pb = Pushbullet(API_KEY)
 cookies = {
     'remember_applicants_59ba36addc2b2f9401580f014c7f58ea4e30989d': '694691%7CSFooPAzLOCxbX0aXaDFbtENONBllgMJlMraTxeAYNqK2WqrGPoHRkk0t4IC2%7C%24argon2id%24v%3D19%24m%3D65536%2Ct%3D4%2Cp%3D1%24T1laYXEyNVphZUszaDJBWg%241e%2FFwRiaaYOGIxxNvJfYrWlO0rVRfvocmN3vKrIhQNs',
@@ -55,12 +55,13 @@ def run():
         new = data['quotas']
         for every in data['quotas']:
             parsed = new[every]
-            if parsed['available'] > 0:
-                push = pb.push_note(cate, parsed['ad'] + '    ' + str(parsed['available']))
+            if parsed['ad'] == '2022-08-29' and parsed['available'] != 100:
+                print(cate + '  AVAILABLE  ' + str(parsed['available']))
+                push = pb.push_note(cate, '  AVAILABLE  ' + str(parsed['available']))
 
 
 def startt():
-    Timer(5, startt).start()
+    Timer(30, startt).start()
     run()
 
 
