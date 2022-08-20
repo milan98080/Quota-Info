@@ -50,7 +50,7 @@ def run():
         new = data['quotas']
         for every in data['quotas']:
             parsed = new[every]
-            print(parsed['ad' + cate + '  AVAILABLE  ' + str(parsed['available']))
+            print(parsed['ad'] + cate + '  AVAILABLE  ' + str(parsed['available']))
 
 
 def startt():
