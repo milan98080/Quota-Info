@@ -42,15 +42,14 @@ def run():
             cate = 'BIKE'
         if cat == 3:
             cate = 'CAR'
-        if cat == 9:
-            cate = 'HEAVY'
         response = requests.post('https://applydl.dotm.gov.np/license/quota', cookies=cookies, headers=headers,
                                  json=json_data)
         data = json.loads(response.text)
         new = data['quotas']
+        print(cate)
         for every in data['quotas']:
             parsed = new[every]
-            print(parsed['ad'] + cate + '  AVAILABLE  ' + str(parsed['available']))
+            print(parsed['ad'] + '  AVAILABLE  ' + str(parsed['available']))
 
 
 def startt():
