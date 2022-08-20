@@ -52,8 +52,8 @@ def run():
         new = data['quotas']
         print(cate)
         for every in data['quotas']:
+            parsed = new[every]
             if parsed['ad'] == '2022-09-05':
-                parsed = new[every]
                 print(parsed['ad'] + '  AVAILABLE  ' + str(parsed['available']))
         print('  ')
 
