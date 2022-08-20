@@ -36,7 +36,7 @@ headers = {
 
 
 def run():
-    categories = [1, 2, 3]
+    categories = [1, 2, 3, 9]
 
     for cat in categories:
         json_data = {
@@ -50,6 +50,8 @@ def run():
             cate = 'BIKE'
         if cat == 3:
             cate = 'CAR'
+        if cat == 9:
+            cate = 'HEAVY'
         response = requests.post('https://applydl.dotm.gov.np/license/quota', cookies=cookies, headers=headers,
                                  json=json_data)
         data = json.loads(response.text)
