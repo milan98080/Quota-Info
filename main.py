@@ -53,13 +53,14 @@ def run():
         print(cate)
         for every in data['quotas']:
             parsed = new[every]
-            if parsed['ad'] == '2022-09-05':
-                print(parsed['ad'] + '  AVAILABLE  ' + str(parsed['available']))
+            print(parsed['ad'] + '   BOOKED  ' + str(parsed['available']))
+            print(parsed['ad'] + '  RESERVED  ' + str(parsed['available']))
+            print(parsed['ad'] + '  AVAILABLE  ' + str(parsed['available']))
         print('  ')
 
 
 def startt():
-    Timer(5, startt).start()
+    Timer(120, startt).start()
     run()
 
 
