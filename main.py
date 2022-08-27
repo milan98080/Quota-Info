@@ -3,28 +3,30 @@ import json
 from threading import Timer
 
 cookies = {
-    'odl_session': 'fLyOW8RMqdDMAySMHGm4iZIoW9qmOCTJqj4sBiDP',
     'remember_applicants_59ba36addc2b2f9401580f014c7f58ea4e30989d': '700903%7Cux7XZ6fwluJnZP9ZavvL0LxxiViZJgYctJPaztKNaDqGd9KFUUPXZqz03zZ0%7C%24argon2id%24v%3D19%24m%3D65536%2Ct%3D4%2Cp%3D1%24eVQ3cll0ZmkweE84MWNicA%24BeDPuvur0h50eRHSpvK4bH1xO%2BPGvUkZb5ahYBoUvKc',
-    'XSRF-TOKEN': 'eyJpdiI6Imd1SEtEenNEZ25vSVZOdDVQUUNWZUE9PSIsInZhbHVlIjoiaEVmU3IwZmJtM29iOVA2OFlvK2xmZURqeWhpaitmU0szem9TZ1FDSTMwMXZISm1VNVlMRWNodWdvM0NaVEdiK3hoT0M5VGtWcnhQaE1Ed1FHbjdUdk9VemdBYS9weXVWcktlNThERVV0SVBCSnAvb1Z6ZUVHZFhoNVRzamFFVnIiLCJtYWMiOiI0MmUzZDAxYjgwMWJkZjY4NDMzMTU5ZWZkODIxYjllNmEzZTU0MzFkNTI2Y2QyNjRhNzY1YWU4MmJmYjhmZTMxIiwidGFnIjoiIn0%3D',
+    'odl_session': 'O7tiqVM22meXr9Mx4dWy3VRpfisjGJhBGgpYeEn7',
+    'XSRF-TOKEN': 'eyJpdiI6Ik1JK3dhemR2WWgycWpLcDd5bG92cmc9PSIsInZhbHVlIjoienJXWGlCZHRuTDE0b1RwYTFWeGpveGdwVXdUMkt4amtxbXc3MkVHRklkRU5XY0JiMlU3YjE0WndjV2FHcDdrOUFEZzRKOWJna284VTVVYmRHWEkrMC9tNTU0aHFyNjY0VHpTZGpYTXl2WDhIMmR1OW9FRVZmUC9vTGlsUlRRaC8iLCJtYWMiOiI3MDc2M2MxYmNmY2M2YTA5YmNmOGJiMzBjMTg5YWM4NmNkOWMwYzkzMDU1MzBkZmQyMjY0NGQxMGNlZmY5MDU3IiwidGFnIjoiIn0%3D',
 }
 
 headers = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:104.0) Gecko/20100101 Firefox/104.0',
     'Accept': 'text/html, application/xhtml+xml',
-    'Accept-Language': 'en-US,en;q=0.5',
-    # 'Accept-Encoding': 'gzip, deflate, br',
-    'X-Requested-With': 'XMLHttpRequest',
-    'X-Inertia': 'true',
-    'X-Inertia-Version': '26f5d68a49eb03710177f0ba3873ab38',
-    'Content-Type': 'application/json',
-    'X-XSRF-TOKEN': 'eyJpdiI6IllQVlNWd2NMa1NrRG54UUtRTFozMWc9PSIsInZhbHVlIjoiYi85VGRZZlh6UGhmZURkT0xwNFgwOUViWk9wR2ZiM2IwM01uc0lIN2VhWFJybTEvNHJMdFNMUFF0WDRGdTJrSFg4V2l1MDZobkFINCtzeE5VTnppWHd6bEtHZjllZ3lHaXNxRDBPQ3hoc3pxWUR0S05CVVBkd1lkalpiRjNobzQiLCJtYWMiOiI3ZTNlYzQ1MDNlYjQyNTU4YzQ4MjgzMGMzNTMxNWFkZjBiY2NiZmNiZWNiYTI0MmZiYmU2Yjg5MDY2N2VlZmE0IiwidGFnIjoiIn0=',
+    'Accept-Language': 'en-US,en;q=0.9',
     'Connection': 'keep-alive',
-    'Referer': 'https://applydl.dotm.gov.np/category',
+    'Content-Type': 'application/json',
     # Requests sorts cookies= alphabetically
-    # 'Cookie': 'remember_applicants_59ba36addc2b2f9401580f014c7f58ea4e30989d=700903%7C4MZ4dSv2841wO97KiollSWbInCHEtHGefdig8T7HdMUIJcjTmrzbtNWQaSg3%7C%24argon2id%24v%3D19%24m%3D65536%2Ct%3D4%2Cp%3D1%24eVQ3cll0ZmkweE84MWNicA%24BeDPuvur0h50eRHSpvK4bH1xO%2BPGvUkZb5ahYBoUvKc; odl_session=SJGfQ1zInnNmIkWa7mZDNUSeGqB3a2EcfEl9wMye; XSRF-TOKEN=eyJpdiI6IllQVlNWd2NMa1NrRG54UUtRTFozMWc9PSIsInZhbHVlIjoiYi85VGRZZlh6UGhmZURkT0xwNFgwOUViWk9wR2ZiM2IwM01uc0lIN2VhWFJybTEvNHJMdFNMUFF0WDRGdTJrSFg4V2l1MDZobkFINCtzeE5VTnppWHd6bEtHZjllZ3lHaXNxRDBPQ3hoc3pxWUR0S05CVVBkd1lkalpiRjNobzQiLCJtYWMiOiI3ZTNlYzQ1MDNlYjQyNTU4YzQ4MjgzMGMzNTMxNWFkZjBiY2NiZmNiZWNiYTI0MmZiYmU2Yjg5MDY2N2VlZmE0IiwidGFnIjoiIn0%3D',
+    # 'Cookie': 'remember_applicants_59ba36addc2b2f9401580f014c7f58ea4e30989d=700903%7Cux7XZ6fwluJnZP9ZavvL0LxxiViZJgYctJPaztKNaDqGd9KFUUPXZqz03zZ0%7C%24argon2id%24v%3D19%24m%3D65536%2Ct%3D4%2Cp%3D1%24eVQ3cll0ZmkweE84MWNicA%24BeDPuvur0h50eRHSpvK4bH1xO%2BPGvUkZb5ahYBoUvKc; odl_session=O7tiqVM22meXr9Mx4dWy3VRpfisjGJhBGgpYeEn7; XSRF-TOKEN=eyJpdiI6Ik1JK3dhemR2WWgycWpLcDd5bG92cmc9PSIsInZhbHVlIjoienJXWGlCZHRuTDE0b1RwYTFWeGpveGdwVXdUMkt4amtxbXc3MkVHRklkRU5XY0JiMlU3YjE0WndjV2FHcDdrOUFEZzRKOWJna284VTVVYmRHWEkrMC9tNTU0aHFyNjY0VHpTZGpYTXl2WDhIMmR1OW9FRVZmUC9vTGlsUlRRaC8iLCJtYWMiOiI3MDc2M2MxYmNmY2M2YTA5YmNmOGJiMzBjMTg5YWM4NmNkOWMwYzkzMDU1MzBkZmQyMjY0NGQxMGNlZmY5MDU3IiwidGFnIjoiIn0%3D',
+    'Referer': 'https://applydl.dotm.gov.np/category',
     'Sec-Fetch-Dest': 'empty',
     'Sec-Fetch-Mode': 'cors',
     'Sec-Fetch-Site': 'same-origin',
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36',
+    'X-Inertia': 'true',
+    'X-Inertia-Version': '26f5d68a49eb03710177f0ba3873ab38',
+    'X-Requested-With': 'XMLHttpRequest',
+    'X-XSRF-TOKEN': 'eyJpdiI6Ik1JK3dhemR2WWgycWpLcDd5bG92cmc9PSIsInZhbHVlIjoienJXWGlCZHRuTDE0b1RwYTFWeGpveGdwVXdUMkt4amtxbXc3MkVHRklkRU5XY0JiMlU3YjE0WndjV2FHcDdrOUFEZzRKOWJna284VTVVYmRHWEkrMC9tNTU0aHFyNjY0VHpTZGpYTXl2WDhIMmR1OW9FRVZmUC9vTGlsUlRRaC8iLCJtYWMiOiI3MDc2M2MxYmNmY2M2YTA5YmNmOGJiMzBjMTg5YWM4NmNkOWMwYzkzMDU1MzBkZmQyMjY0NGQxMGNlZmY5MDU3IiwidGFnIjoiIn0=',
+    'sec-ch-ua': '"Not;A=Brand";v="99", "Chromium";v="106"',
+    'sec-ch-ua-mobile': '?0',
+    'sec-ch-ua-platform': '"Windows"',
 }
 
 
