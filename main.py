@@ -3,24 +3,25 @@ import json
 from threading import Timer
 
 cookies = {
-    'remember_applicants_59ba36addc2b2f9401580f014c7f58ea4e30989d': '694691%7CGdkDFZaSj2zNcW1zMMFERRPRBYxi5vLliweNp6fhiA7E0CImxddlKQDHDjWU%7C%24argon2id%24v%3D19%24m%3D65536%2Ct%3D4%2Cp%3D1%24T1laYXEyNVphZUszaDJBWg%241e%2FFwRiaaYOGIxxNvJfYrWlO0rVRfvocmN3vKrIhQNs',
-    'XSRF-TOKEN': 'eyJpdiI6InhqcXpqTmh6VlE3cGVQUWZGNkpHcFE9PSIsInZhbHVlIjoiNlFLMVVQdUNvMWtlSjhKOFJ3K3lwT3AxdU5oL3d5OXh6ZDNrTjVGMWpXK2VnK2RmVWhoRHFXRkcra1NsTnpVcEQ5eUpGZnNKQ1BSWkFTWGR3N3kvSEk2Z0psTzl5b2MydjN5Yi9qZlVnK3BqejREMFZyZ1pVZk1NNjEzc2d2M2EiLCJtYWMiOiJkYjc4NWQxYWE1YjliOTdmMmQ2ZWI4MDQyMWQxNjUyZGE4YzNkYjRkYWQ0MzU4MDliNDM3YzFlZWQ3ZTVkYWVmIiwidGFnIjoiIn0%3D',
-    'odl_session': 'adVyA6NsfLJOkI8vWJpN2X2n8NGsiK9JqhiAIs49',
+    'remember_applicants_59ba36addc2b2f9401580f014c7f58ea4e30989d': '700903%7C4MZ4dSv2841wO97KiollSWbInCHEtHGefdig8T7HdMUIJcjTmrzbtNWQaSg3%7C%24argon2id%24v%3D19%24m%3D65536%2Ct%3D4%2Cp%3D1%24eVQ3cll0ZmkweE84MWNicA%24BeDPuvur0h50eRHSpvK4bH1xO%2BPGvUkZb5ahYBoUvKc',
+    'odl_session': 'SJGfQ1zInnNmIkWa7mZDNUSeGqB3a2EcfEl9wMye',
+    'XSRF-TOKEN': 'eyJpdiI6IllQVlNWd2NMa1NrRG54UUtRTFozMWc9PSIsInZhbHVlIjoiYi85VGRZZlh6UGhmZURkT0xwNFgwOUViWk9wR2ZiM2IwM01uc0lIN2VhWFJybTEvNHJMdFNMUFF0WDRGdTJrSFg4V2l1MDZobkFINCtzeE5VTnppWHd6bEtHZjllZ3lHaXNxRDBPQ3hoc3pxWUR0S05CVVBkd1lkalpiRjNobzQiLCJtYWMiOiI3ZTNlYzQ1MDNlYjQyNTU4YzQ4MjgzMGMzNTMxNWFkZjBiY2NiZmNiZWNiYTI0MmZiYmU2Yjg5MDY2N2VlZmE0IiwidGFnIjoiIn0%3D',
 }
 
 headers = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:103.0) Gecko/20100101 Firefox/103.0',
-    'Accept': 'application/json, text/plain, */*',
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:104.0) Gecko/20100101 Firefox/104.0',
+    'Accept': 'text/html, application/xhtml+xml',
     'Accept-Language': 'en-US,en;q=0.5',
     # 'Accept-Encoding': 'gzip, deflate, br',
-    # Already added when you pass json=
-    # 'Content-Type': 'application/json',
-    'X-XSRF-TOKEN': 'eyJpdiI6InhqcXpqTmh6VlE3cGVQUWZGNkpHcFE9PSIsInZhbHVlIjoiNlFLMVVQdUNvMWtlSjhKOFJ3K3lwT3AxdU5oL3d5OXh6ZDNrTjVGMWpXK2VnK2RmVWhoRHFXRkcra1NsTnpVcEQ5eUpGZnNKQ1BSWkFTWGR3N3kvSEk2Z0psTzl5b2MydjN5Yi9qZlVnK3BqejREMFZyZ1pVZk1NNjEzc2d2M2EiLCJtYWMiOiJkYjc4NWQxYWE1YjliOTdmMmQ2ZWI4MDQyMWQxNjUyZGE4YzNkYjRkYWQ0MzU4MDliNDM3YzFlZWQ3ZTVkYWVmIiwidGFnIjoiIn0=',
-    'Origin': 'https://applydl.dotm.gov.np',
+    'X-Requested-With': 'XMLHttpRequest',
+    'X-Inertia': 'true',
+    'X-Inertia-Version': '26f5d68a49eb03710177f0ba3873ab38',
+    'Content-Type': 'application/json',
+    'X-XSRF-TOKEN': 'eyJpdiI6IllQVlNWd2NMa1NrRG54UUtRTFozMWc9PSIsInZhbHVlIjoiYi85VGRZZlh6UGhmZURkT0xwNFgwOUViWk9wR2ZiM2IwM01uc0lIN2VhWFJybTEvNHJMdFNMUFF0WDRGdTJrSFg4V2l1MDZobkFINCtzeE5VTnppWHd6bEtHZjllZ3lHaXNxRDBPQ3hoc3pxWUR0S05CVVBkd1lkalpiRjNobzQiLCJtYWMiOiI3ZTNlYzQ1MDNlYjQyNTU4YzQ4MjgzMGMzNTMxNWFkZjBiY2NiZmNiZWNiYTI0MmZiYmU2Yjg5MDY2N2VlZmE0IiwidGFnIjoiIn0=',
     'Connection': 'keep-alive',
-    'Referer': 'https://applydl.dotm.gov.np/license/category',
+    'Referer': 'https://applydl.dotm.gov.np/category',
     # Requests sorts cookies= alphabetically
-    # 'Cookie': 'remember_applicants_59ba36addc2b2f9401580f014c7f58ea4e30989d=694691%7CGdkDFZaSj2zNcW1zMMFERRPRBYxi5vLliweNp6fhiA7E0CImxddlKQDHDjWU%7C%24argon2id%24v%3D19%24m%3D65536%2Ct%3D4%2Cp%3D1%24T1laYXEyNVphZUszaDJBWg%241e%2FFwRiaaYOGIxxNvJfYrWlO0rVRfvocmN3vKrIhQNs; XSRF-TOKEN=eyJpdiI6InhqcXpqTmh6VlE3cGVQUWZGNkpHcFE9PSIsInZhbHVlIjoiNlFLMVVQdUNvMWtlSjhKOFJ3K3lwT3AxdU5oL3d5OXh6ZDNrTjVGMWpXK2VnK2RmVWhoRHFXRkcra1NsTnpVcEQ5eUpGZnNKQ1BSWkFTWGR3N3kvSEk2Z0psTzl5b2MydjN5Yi9qZlVnK3BqejREMFZyZ1pVZk1NNjEzc2d2M2EiLCJtYWMiOiJkYjc4NWQxYWE1YjliOTdmMmQ2ZWI4MDQyMWQxNjUyZGE4YzNkYjRkYWQ0MzU4MDliNDM3YzFlZWQ3ZTVkYWVmIiwidGFnIjoiIn0%3D; odl_session=adVyA6NsfLJOkI8vWJpN2X2n8NGsiK9JqhiAIs49',
+    # 'Cookie': 'remember_applicants_59ba36addc2b2f9401580f014c7f58ea4e30989d=700903%7C4MZ4dSv2841wO97KiollSWbInCHEtHGefdig8T7HdMUIJcjTmrzbtNWQaSg3%7C%24argon2id%24v%3D19%24m%3D65536%2Ct%3D4%2Cp%3D1%24eVQ3cll0ZmkweE84MWNicA%24BeDPuvur0h50eRHSpvK4bH1xO%2BPGvUkZb5ahYBoUvKc; odl_session=SJGfQ1zInnNmIkWa7mZDNUSeGqB3a2EcfEl9wMye; XSRF-TOKEN=eyJpdiI6IllQVlNWd2NMa1NrRG54UUtRTFozMWc9PSIsInZhbHVlIjoiYi85VGRZZlh6UGhmZURkT0xwNFgwOUViWk9wR2ZiM2IwM01uc0lIN2VhWFJybTEvNHJMdFNMUFF0WDRGdTJrSFg4V2l1MDZobkFINCtzeE5VTnppWHd6bEtHZjllZ3lHaXNxRDBPQ3hoc3pxWUR0S05CVVBkd1lkalpiRjNobzQiLCJtYWMiOiI3ZTNlYzQ1MDNlYjQyNTU4YzQ4MjgzMGMzNTMxNWFkZjBiY2NiZmNiZWNiYTI0MmZiYmU2Yjg5MDY2N2VlZmE0IiwidGFnIjoiIn0%3D',
     'Sec-Fetch-Dest': 'empty',
     'Sec-Fetch-Mode': 'cors',
     'Sec-Fetch-Site': 'same-origin',
