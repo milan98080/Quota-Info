@@ -53,7 +53,7 @@ def run():
         print(cate)
         count = -1
         for every in data['quotas']:
-            count ++
+            count += 1
             parsed = new[count]
         print(parsed['ad'] + '   BOOKED  ' + str(parsed['available']))
         print(parsed['ad'] + '  RESERVED  ' + str(parsed['available']))
