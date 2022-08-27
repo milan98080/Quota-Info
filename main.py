@@ -51,11 +51,13 @@ def run():
         data = json.loads(response.text)
         new = data['quotas']
         print(cate)
+        count = -1
         for every in data['quotas']:
-            parsed = new[every]
-            print(parsed['ad'] + '   BOOKED  ' + str(parsed['available']))
-            print(parsed['ad'] + '  RESERVED  ' + str(parsed['available']))
-            print(parsed['ad'] + '  AVAILABLE  ' + str(parsed['available']))
+            count ++
+            parsed = new[count]
+        print(parsed['ad'] + '   BOOKED  ' + str(parsed['available']))
+        print(parsed['ad'] + '  RESERVED  ' + str(parsed['available']))
+        print(parsed['ad'] + '  AVAILABLE  ' + str(parsed['available']))
         print('  ')
 
 
