@@ -53,9 +53,10 @@ def run():
         print(cate)
         for every in data['quotas']:
             parsed = new[count]
-            print(parsed['ad'] + '   BOOKED  ' + str(parsed['available']))
-            print(parsed['ad'] + '  RESERVED  ' + str(parsed['available']))
-            print(parsed['ad'] + '  AVAILABLE  ' + str(parsed['available']))
+            if parsed['ad'] == '2022-09-11':
+                print(parsed['ad'] + '   BOOKED  ' + str(parsed['available']))
+                print(parsed['ad'] + '  RESERVED  ' + str(parsed['available']))
+                print(parsed['ad'] + '  AVAILABLE  ' + str(parsed['available']))
         print('  ')
 
 
