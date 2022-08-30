@@ -3,35 +3,34 @@ import json
 from threading import Timer
 
 cookies = {
-    'remember_applicants_59ba36addc2b2f9401580f014c7f58ea4e30989d': '700903%7Cux7XZ6fwluJnZP9ZavvL0LxxiViZJgYctJPaztKNaDqGd9KFUUPXZqz03zZ0%7C%24argon2id%24v%3D19%24m%3D65536%2Ct%3D4%2Cp%3D1%24eVQ3cll0ZmkweE84MWNicA%24BeDPuvur0h50eRHSpvK4bH1xO%2BPGvUkZb5ahYBoUvKc',
-    'odl_session': 'O7tiqVM22meXr9Mx4dWy3VRpfisjGJhBGgpYeEn7',
-    'XSRF-TOKEN': 'eyJpdiI6Ik1JK3dhemR2WWgycWpLcDd5bG92cmc9PSIsInZhbHVlIjoienJXWGlCZHRuTDE0b1RwYTFWeGpveGdwVXdUMkt4amtxbXc3MkVHRklkRU5XY0JiMlU3YjE0WndjV2FHcDdrOUFEZzRKOWJna284VTVVYmRHWEkrMC9tNTU0aHFyNjY0VHpTZGpYTXl2WDhIMmR1OW9FRVZmUC9vTGlsUlRRaC8iLCJtYWMiOiI3MDc2M2MxYmNmY2M2YTA5YmNmOGJiMzBjMTg5YWM4NmNkOWMwYzkzMDU1MzBkZmQyMjY0NGQxMGNlZmY5MDU3IiwidGFnIjoiIn0%3D',
+    'remember_applicants_59ba36addc2b2f9401580f014c7f58ea4e30989d': '744619%7CmRNCABneb9FAFKF23CNiStLaRPrtj5XxxFIiTptQ0llSO33mQuh7FBHarDOB%7C%24argon2id%24v%3D19%24m%3D65536%2Ct%3D4%2Cp%3D1%24VE5vL0k5dS5vV21SeTJhTw%24TKLwj8rrdnv2lqJZuiLFx%2FbJXPtt3TCfyL62kAELId8',
+    'XSRF-TOKEN': 'eyJpdiI6IkRRYjFrNzZvaktsZURpTWtoRGlMVFE9PSIsInZhbHVlIjoiQnAvVGxlTDVvZVhXTjhnbDZkdlV2T2pHbmZ4MkhTMENWMVBpQzBsSmkrZ0xUbDRxdCt5RFhqYWN2R1Q0UXJ1N3YyMkNzLzlUSWNkVlJRd1k1cGlmaXEySG1JQllYeVpoWTBma3RBMVBwdDkxWkVFZFVkdnk1R0s5S2xTeGNleDgiLCJtYWMiOiI4ZGMxYTgwOTY3NzQzOWRkYmE1ZmU2YzE3MzU3ZDUyMDA4ODE1NjBhMGYyYTY4OGQyYjFiOTJkMDc4NTE3N2Y2IiwidGFnIjoiIn0%3D',
+    'odl_session': 'P1rq4HQMFpQfeank06laeQJKnfrKSnqj0KvlVWsO',
 }
 
 headers = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:104.0) Gecko/20100101 Firefox/104.0',
     'Accept': 'text/html, application/xhtml+xml',
-    'Accept-Language': 'en-US,en;q=0.9',
-    'Connection': 'keep-alive',
+    'Accept-Language': 'en-US,en;q=0.5',
+    # 'Accept-Encoding': 'gzip, deflate, br',
+    'X-Requested-With': 'XMLHttpRequest',
+    'X-Inertia': 'true',
+    'X-Inertia-Version': '26f5d68a49eb03710177f0ba3873ab38',
     'Content-Type': 'application/json',
+    'X-XSRF-TOKEN': 'eyJpdiI6IkRRYjFrNzZvaktsZURpTWtoRGlMVFE9PSIsInZhbHVlIjoiQnAvVGxlTDVvZVhXTjhnbDZkdlV2T2pHbmZ4MkhTMENWMVBpQzBsSmkrZ0xUbDRxdCt5RFhqYWN2R1Q0UXJ1N3YyMkNzLzlUSWNkVlJRd1k1cGlmaXEySG1JQllYeVpoWTBma3RBMVBwdDkxWkVFZFVkdnk1R0s5S2xTeGNleDgiLCJtYWMiOiI4ZGMxYTgwOTY3NzQzOWRkYmE1ZmU2YzE3MzU3ZDUyMDA4ODE1NjBhMGYyYTY4OGQyYjFiOTJkMDc4NTE3N2Y2IiwidGFnIjoiIn0=',
+    'Connection': 'keep-alive',
+    'Referer': 'https://applydl.dotm.gov.np/',
     # Requests sorts cookies= alphabetically
-    # 'Cookie': 'remember_applicants_59ba36addc2b2f9401580f014c7f58ea4e30989d=700903%7Cux7XZ6fwluJnZP9ZavvL0LxxiViZJgYctJPaztKNaDqGd9KFUUPXZqz03zZ0%7C%24argon2id%24v%3D19%24m%3D65536%2Ct%3D4%2Cp%3D1%24eVQ3cll0ZmkweE84MWNicA%24BeDPuvur0h50eRHSpvK4bH1xO%2BPGvUkZb5ahYBoUvKc; odl_session=O7tiqVM22meXr9Mx4dWy3VRpfisjGJhBGgpYeEn7; XSRF-TOKEN=eyJpdiI6Ik1JK3dhemR2WWgycWpLcDd5bG92cmc9PSIsInZhbHVlIjoienJXWGlCZHRuTDE0b1RwYTFWeGpveGdwVXdUMkt4amtxbXc3MkVHRklkRU5XY0JiMlU3YjE0WndjV2FHcDdrOUFEZzRKOWJna284VTVVYmRHWEkrMC9tNTU0aHFyNjY0VHpTZGpYTXl2WDhIMmR1OW9FRVZmUC9vTGlsUlRRaC8iLCJtYWMiOiI3MDc2M2MxYmNmY2M2YTA5YmNmOGJiMzBjMTg5YWM4NmNkOWMwYzkzMDU1MzBkZmQyMjY0NGQxMGNlZmY5MDU3IiwidGFnIjoiIn0%3D',
-    'Referer': 'https://applydl.dotm.gov.np',
+    # 'Cookie': 'remember_applicants_59ba36addc2b2f9401580f014c7f58ea4e30989d=744619%7CmRNCABneb9FAFKF23CNiStLaRPrtj5XxxFIiTptQ0llSO33mQuh7FBHarDOB%7C%24argon2id%24v%3D19%24m%3D65536%2Ct%3D4%2Cp%3D1%24VE5vL0k5dS5vV21SeTJhTw%24TKLwj8rrdnv2lqJZuiLFx%2FbJXPtt3TCfyL62kAELId8; XSRF-TOKEN=eyJpdiI6IkRRYjFrNzZvaktsZURpTWtoRGlMVFE9PSIsInZhbHVlIjoiQnAvVGxlTDVvZVhXTjhnbDZkdlV2T2pHbmZ4MkhTMENWMVBpQzBsSmkrZ0xUbDRxdCt5RFhqYWN2R1Q0UXJ1N3YyMkNzLzlUSWNkVlJRd1k1cGlmaXEySG1JQllYeVpoWTBma3RBMVBwdDkxWkVFZFVkdnk1R0s5S2xTeGNleDgiLCJtYWMiOiI4ZGMxYTgwOTY3NzQzOWRkYmE1ZmU2YzE3MzU3ZDUyMDA4ODE1NjBhMGYyYTY4OGQyYjFiOTJkMDc4NTE3N2Y2IiwidGFnIjoiIn0%3D; odl_session=P1rq4HQMFpQfeank06laeQJKnfrKSnqj0KvlVWsO',
     'Sec-Fetch-Dest': 'empty',
     'Sec-Fetch-Mode': 'cors',
     'Sec-Fetch-Site': 'same-origin',
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36',
-    'X-Inertia': 'true',
-    'X-Inertia-Version': '26f5d68a49eb03710177f0ba3873ab38',
-    'X-Requested-With': 'XMLHttpRequest',
-    'X-XSRF-TOKEN': 'eyJpdiI6Ik1JK3dhemR2WWgycWpLcDd5bG92cmc9PSIsInZhbHVlIjoienJXWGlCZHRuTDE0b1RwYTFWeGpveGdwVXdUMkt4amtxbXc3MkVHRklkRU5XY0JiMlU3YjE0WndjV2FHcDdrOUFEZzRKOWJna284VTVVYmRHWEkrMC9tNTU0aHFyNjY0VHpTZGpYTXl2WDhIMmR1OW9FRVZmUC9vTGlsUlRRaC8iLCJtYWMiOiI3MDc2M2MxYmNmY2M2YTA5YmNmOGJiMzBjMTg5YWM4NmNkOWMwYzkzMDU1MzBkZmQyMjY0NGQxMGNlZmY5MDU3IiwidGFnIjoiIn0=',
-    'sec-ch-ua': '"Not;A=Brand";v="99", "Chromium";v="106"',
-    'sec-ch-ua-mobile': '?0',
-    'sec-ch-ua-platform': '"Windows"',
 }
 
 
+
 def run():
-        response = requests.post('https://applydl.dotm.gov.np/license/apply', cookies=cookies, headers=headers)
+        response = requests.get('https://applydl.dotm.gov.np/license/category', cookies=cookies, headers=headers)
         x = response.status_code
         if x == 200:
             print('running')
