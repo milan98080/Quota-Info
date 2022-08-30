@@ -31,8 +31,7 @@ headers = {
 
 
 def run():
-        response = requests.post('https://applydl.dotm.gov.np/license/apply', cookies=cookies, headers=headers,
-                                 json=json_data)
+        response = requests.post('https://applydl.dotm.gov.np/license/apply', cookies=cookies, headers=headers)
         x = response.ststus_code
         if x == 200:
             print('running')
