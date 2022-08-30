@@ -34,7 +34,7 @@ def run():
         response = requests.post('https://applydl.dotm.gov.np/license/apply', cookies=cookies, headers=headers,
                                  json=json_data)
         x = response.ststus_code
-        if x = 200:
+        if x == 200:
             print('running')
         else:
             print('not running')
