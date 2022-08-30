@@ -32,14 +32,11 @@ headers = {
 def run():
         response = requests.get('https://applydl.dotm.gov.np/license/category', cookies=cookies, headers=headers)
         x = response.status_code
-        if x == 200:
-            print('running')
-        else:
-            print('not running')
+        print(x)
 
 
 def startt():
-    Timer(120, startt).start()
+    Timer(5, startt).start()
     run()
 
 
