@@ -36,7 +36,7 @@ def run():
             print('not running')
         if x == 200:
             print('running')
-            startt();
+            run();
 
 
-startt()
+run()
