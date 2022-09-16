@@ -31,8 +31,8 @@ json_data = {
     'password': 'Pokhara@123',
     'current_password': 'Pokhara@123',
     'password_confirmation': 'Pokhara@123',
-    'otp': '000000',
-    'verification': 'eyJpdiI6IkdGSGNRU2t0L29TUW4vNkNDT0NIR0E9PSIsInZhbHVlIjoib0s4NzNITmx5anMxUE54bS9vRnl1SUxnd0gza1hVWWFvSVhqMi9sQTc3TT0iLCJtYWMiOiIyNmU1YTIwMGY4ZTgyMzk5M2FhNTUwMGRiNzdlMDEzNTNjYTg2ZTk0YzBiMGE2MzE1NzQ4NTE1OTA3NWEzYWMxIiwidGFnIjoiIn0=',
+    'otp': '700002',
+    'verification': 'eyJpdiI6IkozandRcCtWdUFWOG9MVUpidUswWEE9PSIsInZhbHVlIjoiajFPT2RvdWRURXpvV3ZCSGlpUzI5ZFVvVXlNQkZQZFMzNENSZ1ptS2hFST0iLCJtYWMiOiJjMGViZTU0NDg5OTJjNzBiODhkNDNhNWQzMWMxZTJkYWVhMGMxMjg2NThlZDViZTU1NWFjZjMyOTYzZmRjOTdjIiwidGFnIjoiIn0=',
 }
 
 response = requests.post('https://applydl.dotm.gov.np/change/password', cookies=cookies, headers=headers, json=json_data)
