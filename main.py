@@ -3,8 +3,9 @@ import json
 from threading import Timer
 
 cookies = {
-    'odl_session': 'MqnLNPXq2qGa7OIuesukh7BfPJwqOP6o5IVAlClN',
-    'XSRF-TOKEN': 'eyJpdiI6IndvYmxMeHlkejYrQmpVTjdPaFRrREE9PSIsInZhbHVlIjoid3pvL1NLN0xROUhGejNMMVZNczRwV2ZJKy9XV0ZzVVIrVGhlOXA0R3ZKUVlVdlFpUS9EbktVK0V3KzJGTG51Rm12VFRVTjhDcmFaTWcvSWVoUU1vSktOM0ZJUFBHZzloQndZRUNjTitDTFZrN3hXSmd3TFA4R0pFZGJ6RVBRYkYiLCJtYWMiOiIzMTcxOGNhMmVhN2QzOTdiZTMwNjJiZDcwNzlkZDg3ODM4MWQ0ZGExMGM3MzFlYWMyOWYxOTc0YThhZGQ1MjI5IiwidGFnIjoiIn0%3D',
+    'remember_applicants_59ba36addc2b2f9401580f014c7f58ea4e30989d': '1046352%7CLsJujv0Gf3y8T3DzUIT1wmfpozQFb67n2XnbtRNjJtgeFNfmhbZoiuKPVZPN%7C%24argon2id%24v%3D19%24m%3D65536%2Ct%3D4%2Cp%3D1%24YzduOEVXbnY1TUFsbGluLw%24hBadRUDwmRJLW3m%2B7C%2BGKxIpf0wxbtiL57GGIuIsYuI',
+    'XSRF-TOKEN': 'eyJpdiI6InQwdERpQmc5N0gxM1IycjlyQTAvN3c9PSIsInZhbHVlIjoicDJNUnF0L0M3c0d3V1cwOWowMWVjdWZFV2dwakd2OEtpSFlMQUgvbTJlQ2xlTWcwcWdCMVFrWmkzanNMZEJ6UldWTTRzWUI1NjI4V2toUk8vU2NmT081VGdlYjQ3Q0lhVzU3clNDNmhHbTNCRWhGUGpubThUQUYwdGRPV0VFVlQiLCJtYWMiOiI5YmIzYzJlYzNmNmFlZGUxZjNlMzM4ODMzZjkyM2EzNWZjZjQ0MjE2ZGE0MzRlZjg5MmQ2ZGI2YjA2ZGE1OGQzIiwidGFnIjoiIn0%3D',
+    'odl_session': 'D2HHe8Tlvilo4FHXeHCss8blPgekBfF6TXGbOTui',
 }
 
 headers = {
@@ -13,7 +14,7 @@ headers = {
     'Connection': 'keep-alive',
     'Content-Type': 'application/json',
     # Requests sorts cookies= alphabetically
-    # 'Cookie': 'odl_session=MqnLNPXq2qGa7OIuesukh7BfPJwqOP6o5IVAlClN; XSRF-TOKEN=eyJpdiI6IndvYmxMeHlkejYrQmpVTjdPaFRrREE9PSIsInZhbHVlIjoid3pvL1NLN0xROUhGejNMMVZNczRwV2ZJKy9XV0ZzVVIrVGhlOXA0R3ZKUVlVdlFpUS9EbktVK0V3KzJGTG51Rm12VFRVTjhDcmFaTWcvSWVoUU1vSktOM0ZJUFBHZzloQndZRUNjTitDTFZrN3hXSmd3TFA4R0pFZGJ6RVBRYkYiLCJtYWMiOiIzMTcxOGNhMmVhN2QzOTdiZTMwNjJiZDcwNzlkZDg3ODM4MWQ0ZGExMGM3MzFlYWMyOWYxOTc0YThhZGQ1MjI5IiwidGFnIjoiIn0%3D',
+    # 'Cookie': 'remember_applicants_59ba36addc2b2f9401580f014c7f58ea4e30989d=1046352%7CLsJujv0Gf3y8T3DzUIT1wmfpozQFb67n2XnbtRNjJtgeFNfmhbZoiuKPVZPN%7C%24argon2id%24v%3D19%24m%3D65536%2Ct%3D4%2Cp%3D1%24YzduOEVXbnY1TUFsbGluLw%24hBadRUDwmRJLW3m%2B7C%2BGKxIpf0wxbtiL57GGIuIsYuI; XSRF-TOKEN=eyJpdiI6InQwdERpQmc5N0gxM1IycjlyQTAvN3c9PSIsInZhbHVlIjoicDJNUnF0L0M3c0d3V1cwOWowMWVjdWZFV2dwakd2OEtpSFlMQUgvbTJlQ2xlTWcwcWdCMVFrWmkzanNMZEJ6UldWTTRzWUI1NjI4V2toUk8vU2NmT081VGdlYjQ3Q0lhVzU3clNDNmhHbTNCRWhGUGpubThUQUYwdGRPV0VFVlQiLCJtYWMiOiI5YmIzYzJlYzNmNmFlZGUxZjNlMzM4ODMzZjkyM2EzNWZjZjQ0MjE2ZGE0MzRlZjg5MmQ2ZGI2YjA2ZGE1OGQzIiwidGFnIjoiIn0%3D; odl_session=D2HHe8Tlvilo4FHXeHCss8blPgekBfF6TXGbOTui',
     'Referer': 'https://applydl.dotm.gov.np/',
     'Sec-Fetch-Dest': 'empty',
     'Sec-Fetch-Mode': 'cors',
@@ -21,15 +22,11 @@ headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36',
     'X-Inertia': 'true',
     'X-Inertia-Version': 'abfe0d2fb15763f4d5db4390a711e362',
-    'X-NewRelic-ID': 'VwMAWVNbCBAFVFVTDgEDX1U=',
     'X-Requested-With': 'XMLHttpRequest',
-    'X-XSRF-TOKEN': 'eyJpdiI6IndvYmxMeHlkejYrQmpVTjdPaFRrREE9PSIsInZhbHVlIjoid3pvL1NLN0xROUhGejNMMVZNczRwV2ZJKy9XV0ZzVVIrVGhlOXA0R3ZKUVlVdlFpUS9EbktVK0V3KzJGTG51Rm12VFRVTjhDcmFaTWcvSWVoUU1vSktOM0ZJUFBHZzloQndZRUNjTitDTFZrN3hXSmd3TFA4R0pFZGJ6RVBRYkYiLCJtYWMiOiIzMTcxOGNhMmVhN2QzOTdiZTMwNjJiZDcwNzlkZDg3ODM4MWQ0ZGExMGM3MzFlYWMyOWYxOTc0YThhZGQ1MjI5IiwidGFnIjoiIn0=',
-    'newrelic': 'eyJ2IjpbMCwxXSwiZCI6eyJ0eSI6IkJyb3dzZXIiLCJhYyI6IjM1Nzg1ODAiLCJhcCI6IjUwNDE5MDUwOCIsImlkIjoiMjhlZmI1MTJiZDA1NTU1ZCIsInRyIjoiOTcwNGI1YTBiN2Y1YmJkOTQzYmY2Y2VkN2MxOGYwMDciLCJ0aSI6MTY2NDc2OTU4MTk3N319',
+    'X-XSRF-TOKEN': 'eyJpdiI6InQwdERpQmc5N0gxM1IycjlyQTAvN3c9PSIsInZhbHVlIjoicDJNUnF0L0M3c0d3V1cwOWowMWVjdWZFV2dwakd2OEtpSFlMQUgvbTJlQ2xlTWcwcWdCMVFrWmkzanNMZEJ6UldWTTRzWUI1NjI4V2toUk8vU2NmT081VGdlYjQ3Q0lhVzU3clNDNmhHbTNCRWhGUGpubThUQUYwdGRPV0VFVlQiLCJtYWMiOiI5YmIzYzJlYzNmNmFlZGUxZjNlMzM4ODMzZjkyM2EzNWZjZjQ0MjE2ZGE0MzRlZjg5MmQ2ZGI2YjA2ZGE1OGQzIiwidGFnIjoiIn0=',
     'sec-ch-ua': '"Not?A_Brand";v="8", "Chromium";v="108"',
     'sec-ch-ua-mobile': '?0',
     'sec-ch-ua-platform': '"Windows"',
-    'traceparent': '00-9704b5a0b7f5bbd943bf6ced7c18f007-28efb512bd05555d-01',
-    'tracestate': '3578580@nr=0-1-3578580-504190508-28efb512bd05555d----1664769581977',
 }
 
 def run():
