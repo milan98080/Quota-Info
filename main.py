@@ -3,9 +3,9 @@ import json
 from threading import Timer
 
 cookies = {
-    'remember_applicants_59ba36addc2b2f9401580f014c7f58ea4e30989d': '1046352%7CLsJujv0Gf3y8T3DzUIT1wmfpozQFb67n2XnbtRNjJtgeFNfmhbZoiuKPVZPN%7C%24argon2id%24v%3D19%24m%3D65536%2Ct%3D4%2Cp%3D1%24YzduOEVXbnY1TUFsbGluLw%24hBadRUDwmRJLW3m%2B7C%2BGKxIpf0wxbtiL57GGIuIsYuI',
-    'XSRF-TOKEN': 'eyJpdiI6InQwdERpQmc5N0gxM1IycjlyQTAvN3c9PSIsInZhbHVlIjoicDJNUnF0L0M3c0d3V1cwOWowMWVjdWZFV2dwakd2OEtpSFlMQUgvbTJlQ2xlTWcwcWdCMVFrWmkzanNMZEJ6UldWTTRzWUI1NjI4V2toUk8vU2NmT081VGdlYjQ3Q0lhVzU3clNDNmhHbTNCRWhGUGpubThUQUYwdGRPV0VFVlQiLCJtYWMiOiI5YmIzYzJlYzNmNmFlZGUxZjNlMzM4ODMzZjkyM2EzNWZjZjQ0MjE2ZGE0MzRlZjg5MmQ2ZGI2YjA2ZGE1OGQzIiwidGFnIjoiIn0%3D',
-    'odl_session': 'D2HHe8Tlvilo4FHXeHCss8blPgekBfF6TXGbOTui',
+    'odl_session': 'I4uK3ULS6WYILHjK3tN7U0NzGMG3oLMJi6iLyIHl',
+    'remember_applicants_59ba36addc2b2f9401580f014c7f58ea4e30989d': '973593%7Co3c6NMSCelPD4Jsis3DCEflQ280P7cdwS6WV9v04VyaR0JNxvg22ugs2Pr36%7C%24argon2id%24v%3D19%24m%3D65536%2Ct%3D4%2Cp%3D1%24YnBNY1hGMTRwU3VpWG05Qw%24gt1914SeJeVouqS3x6fceNqhZjVkzQppt1Ke7AQbKu8',
+    'XSRF-TOKEN': 'eyJpdiI6Ii9kSTdNSC9mZnBaRDZBeGJuQys2V2c9PSIsInZhbHVlIjoidUpVN2NSTFNCMFNVUXlxSnVNL3I4Y1F4ZHh1Vjl0dWNOWkN5Nll1MkUwdTloVGJ4aGhwUmcydHZVZkcvYWlLUlJJYkZ2MjdOWVY2bVNIeXlYQnR2RGdCZVJ3K29BckVnVVhjcGpWSlNSa1R3cWZwUmtOdHNvb1V5cGFTQXN0N2oiLCJtYWMiOiI2ODQ0ZGQ4NGRlNjQxMTFiNWE2NWFmYzdhODk1YjgwMWIzYzE1MjQ0YzdjN2ZjM2Q5OGNlYTU5N2E1YzAwMWYzIiwidGFnIjoiIn0%3D',
 }
 
 headers = {
@@ -13,24 +13,27 @@ headers = {
     'Accept-Language': 'en-US,en;q=0.9',
     'Connection': 'keep-alive',
     'Content-Type': 'application/json',
-    # Requests sorts cookies= alphabetically
-    # 'Cookie': 'remember_applicants_59ba36addc2b2f9401580f014c7f58ea4e30989d=1046352%7CLsJujv0Gf3y8T3DzUIT1wmfpozQFb67n2XnbtRNjJtgeFNfmhbZoiuKPVZPN%7C%24argon2id%24v%3D19%24m%3D65536%2Ct%3D4%2Cp%3D1%24YzduOEVXbnY1TUFsbGluLw%24hBadRUDwmRJLW3m%2B7C%2BGKxIpf0wxbtiL57GGIuIsYuI; XSRF-TOKEN=eyJpdiI6InQwdERpQmc5N0gxM1IycjlyQTAvN3c9PSIsInZhbHVlIjoicDJNUnF0L0M3c0d3V1cwOWowMWVjdWZFV2dwakd2OEtpSFlMQUgvbTJlQ2xlTWcwcWdCMVFrWmkzanNMZEJ6UldWTTRzWUI1NjI4V2toUk8vU2NmT081VGdlYjQ3Q0lhVzU3clNDNmhHbTNCRWhGUGpubThUQUYwdGRPV0VFVlQiLCJtYWMiOiI5YmIzYzJlYzNmNmFlZGUxZjNlMzM4ODMzZjkyM2EzNWZjZjQ0MjE2ZGE0MzRlZjg5MmQ2ZGI2YjA2ZGE1OGQzIiwidGFnIjoiIn0%3D; odl_session=D2HHe8Tlvilo4FHXeHCss8blPgekBfF6TXGbOTui',
+    # 'Cookie': 'odl_session=I4uK3ULS6WYILHjK3tN7U0NzGMG3oLMJi6iLyIHl; remember_applicants_59ba36addc2b2f9401580f014c7f58ea4e30989d=973593%7Co3c6NMSCelPD4Jsis3DCEflQ280P7cdwS6WV9v04VyaR0JNxvg22ugs2Pr36%7C%24argon2id%24v%3D19%24m%3D65536%2Ct%3D4%2Cp%3D1%24YnBNY1hGMTRwU3VpWG05Qw%24gt1914SeJeVouqS3x6fceNqhZjVkzQppt1Ke7AQbKu8; XSRF-TOKEN=eyJpdiI6Ii9kSTdNSC9mZnBaRDZBeGJuQys2V2c9PSIsInZhbHVlIjoidUpVN2NSTFNCMFNVUXlxSnVNL3I4Y1F4ZHh1Vjl0dWNOWkN5Nll1MkUwdTloVGJ4aGhwUmcydHZVZkcvYWlLUlJJYkZ2MjdOWVY2bVNIeXlYQnR2RGdCZVJ3K29BckVnVVhjcGpWSlNSa1R3cWZwUmtOdHNvb1V5cGFTQXN0N2oiLCJtYWMiOiI2ODQ0ZGQ4NGRlNjQxMTFiNWE2NWFmYzdhODk1YjgwMWIzYzE1MjQ0YzdjN2ZjM2Q5OGNlYTU5N2E1YzAwMWYzIiwidGFnIjoiIn0%3D',
     'Referer': 'https://applydl.dotm.gov.np/',
     'Sec-Fetch-Dest': 'empty',
     'Sec-Fetch-Mode': 'cors',
     'Sec-Fetch-Site': 'same-origin',
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36',
     'X-Inertia': 'true',
-    'X-Inertia-Version': 'abfe0d2fb15763f4d5db4390a711e362',
+    'X-Inertia-Version': '29261dd93cf97c2e4a714179fe7a4a9b',
+    'X-NewRelic-ID': 'VwMAWVNbCBAFVFVTDgEDX1U=',
     'X-Requested-With': 'XMLHttpRequest',
-    'X-XSRF-TOKEN': 'eyJpdiI6InQwdERpQmc5N0gxM1IycjlyQTAvN3c9PSIsInZhbHVlIjoicDJNUnF0L0M3c0d3V1cwOWowMWVjdWZFV2dwakd2OEtpSFlMQUgvbTJlQ2xlTWcwcWdCMVFrWmkzanNMZEJ6UldWTTRzWUI1NjI4V2toUk8vU2NmT081VGdlYjQ3Q0lhVzU3clNDNmhHbTNCRWhGUGpubThUQUYwdGRPV0VFVlQiLCJtYWMiOiI5YmIzYzJlYzNmNmFlZGUxZjNlMzM4ODMzZjkyM2EzNWZjZjQ0MjE2ZGE0MzRlZjg5MmQ2ZGI2YjA2ZGE1OGQzIiwidGFnIjoiIn0=',
+    'X-XSRF-TOKEN': 'eyJpdiI6Ii9kSTdNSC9mZnBaRDZBeGJuQys2V2c9PSIsInZhbHVlIjoidUpVN2NSTFNCMFNVUXlxSnVNL3I4Y1F4ZHh1Vjl0dWNOWkN5Nll1MkUwdTloVGJ4aGhwUmcydHZVZkcvYWlLUlJJYkZ2MjdOWVY2bVNIeXlYQnR2RGdCZVJ3K29BckVnVVhjcGpWSlNSa1R3cWZwUmtOdHNvb1V5cGFTQXN0N2oiLCJtYWMiOiI2ODQ0ZGQ4NGRlNjQxMTFiNWE2NWFmYzdhODk1YjgwMWIzYzE1MjQ0YzdjN2ZjM2Q5OGNlYTU5N2E1YzAwMWYzIiwidGFnIjoiIn0=',
+    'newrelic': 'eyJ2IjpbMCwxXSwiZCI6eyJ0eSI6IkJyb3dzZXIiLCJhYyI6IjM1Nzg1ODAiLCJhcCI6IjUwNDE5MDUwOCIsImlkIjoiYzMzMTAzMGQyOWExMzYzYyIsInRyIjoiMWU2YWU3NDZmMmEwNTMwNDZmZmY5YjQ3NDg2N2EwYTAiLCJ0aSI6MTY3MTg0NDE5MzA0OX19',
     'sec-ch-ua': '"Not?A_Brand";v="8", "Chromium";v="108"',
     'sec-ch-ua-mobile': '?0',
     'sec-ch-ua-platform': '"Windows"',
+    'traceparent': '00-1e6ae746f2a053046fff9b474867a0a0-c331030d29a1363c-01',
+    'tracestate': '3578580@nr=0-1-3578580-504190508-c331030d29a1363c----1671844193049',
 }
 
 def run():
-    categories = [1, 2, 3]
+    categories = [1, 2, 3, 8, 9]
 
     for cat in categories:
         json_data = {
@@ -55,7 +58,7 @@ def run():
         print(cate)
         for every in data['quotas']:
             parsed = new[every]
-            if parsed['ad'] == '2022-10-18':
+            if parsed['ad'] == '2023-01-08':
                 print(parsed['ad'] + '   BOOKED  ' + str(parsed['booked']))
                 print(parsed['ad'] + '  RESERVED  ' + str(parsed['reserved']))
                 print(parsed['ad'] + '  AVAILABLE  ' + str(parsed['available']))
@@ -63,7 +66,7 @@ def run():
 
 
 def startt():
-    Timer(120, startt).start()
+    Timer(60, startt).start()
     run()
 
 
